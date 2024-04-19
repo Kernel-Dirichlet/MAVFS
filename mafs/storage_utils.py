@@ -61,7 +61,7 @@ class ShellManager():
                 pass
             if option == 2:
                 data_dict = self.ram_fs_mgr.dump(matches[1])
-                import pdb ; pdb.set_trace()
+                #import pdb ; pdb.set_trace()
                 print('successfully transferred data from RAMFS to Disk')
 
     def display_shell(self,shell_str = 'mafs_shell>:/'):
@@ -320,7 +320,7 @@ class BasicDiskManager(DiskFSManager):
            count = 10):
         
         vdisk_contents = os.listdir(self.vdisk)
-        import pdb ; pdb.set_trace()
+        #import pdb ; pdb.set_trace()
         for contents in vdisk_contents: 
             print(f'{contents}\n')
 
@@ -331,7 +331,7 @@ class BasicDiskManager(DiskFSManager):
         dir_path, file_name = os.path.split(file_name)
         os.makedirs(dir_path,
                     exist_ok = True)
-        import pdb ; pdb.set_trace()
+        #import pdb ; pdb.set_trace()
         subprocess.run('sudo {} {}/{}'.format(text_editor,
                                               self.vdisk,
                                               file_name.strip()),
