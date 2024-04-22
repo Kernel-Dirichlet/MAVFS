@@ -22,7 +22,7 @@ As such, the MAFS protocol needs to delicately balances implementation flexibili
 
 ** Architecture
 
-The following diagram below illustrates a MAVFS ![alt text](mavfs_architecture.png)
+The following diagram below illustrates a MAVFS ![alt text](mavfs_main.png)
 
 
 
