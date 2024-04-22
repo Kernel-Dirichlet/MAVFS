@@ -1,11 +1,13 @@
 # Memory Agnostic Virtual File System (MAVFS) 
 
-MAVFS is a virtualized file system (VFS) that uses the MAFS protocol between two or more physical storage media. 
+MAVFS is a virtualized file system (VFS) that uses the MAFS protocol between two or more physical or virtual storage media. 
 The primary use case is combining RAM and disk based storage into an easy to use VFS, which allows faster read/write access to data stored in RAM, 
 and faciltating easy transfer from "hot" storage (RAM) into "cold" storage (disk). The MAFS is a protocol which allows for the combination of two or more file systems into a single VFS, even when
 one or more of the underlying constituent file systems are themselves virtual. 
 
-Because MAVFS itself abstracts the specifics of the component file systems used, many possible file system combinations exist. As such, the MAFS protocol delicately balances implementation flexibility with a clearly defined standard that allows for sufficient distinction between MAVFS and other file systems. The current standard is as follows (but will likely evolve over time): 
+Because MAVFS itself abstracts the specifics of the component file systems used, many possible file system combinations exist. Here, note that MAVFS does *not* have its own standard implementation as many file systems do. The MAFS protocol is what unifies two different file systems on physical devices (or virtualized storage) into one cohesive unit.
+
+As such, the MAFS protocol needs to delicately balances implementation flexibility with a clearly defined standard that allows for sufficient distinction between MAVFS and other file systems. The current standard is as follows (but will likely evolve over time): 
 
 1) **Unix-like shell/UI** - This ensures a common interface, regardless of the underlying back-end implementation for the file systems in the storage media. Unix shells are familiar to many developers, and many of the commands used in the MAFS protocol are commands similar to directly borrowed from other Unix shells.
 2) **Storage Hypervisor** - This is a software abstraction layer which has three components:
@@ -20,7 +22,7 @@ Because MAVFS itself abstracts the specifics of the component file systems used,
 
 ** Architecture
 
-The following diagram below illustrates a MAVFS. 
+The following diagram below illustrates a MAVFS ![alt text](mavfs_architecture.png)
 
 
 
